@@ -1,21 +1,22 @@
 var inputtext=document.querySelector("#input");
-var buttonclick=document.querySelector("#button");
+var buttonclick1=document.querySelector("#button1");
 var outputshow=document.querySelector("#output");
 
-var ServerURL="https://api.funtranslations.com/translate/minion.json"
-function getTranslationURL(text){
-  return ServerURL + "?" + "text=" + text
+var ServerMinion="https://api.funtranslations.com/translate/minion.json"
+function getTranslationURL1(text){
+  return ServerMinion + "?" + "text=" + text
 }
+
 
 function errorHandler(error){
     console.log("error occurred",error)
     alert("Something Wrong with the Server, Try Again After sometime")
 }
 
-function clickHandler(){
+function clickHandler1(){
     var txtInput=inputtext.value;
 
-    fetch(getTranslationURL(txtInput))
+    fetch(getTranslationURL1(txtInput))
     .then(response => response.json())
     .then(json => {
         
@@ -25,4 +26,4 @@ function clickHandler(){
     .catch(errorHandler)
 }
 
-buttonclick.addEventListener("click",clickHandler)
+buttonclick1.addEventListener("click",clickHandler1)
